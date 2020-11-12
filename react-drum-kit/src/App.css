@@ -26,6 +26,12 @@
 	cursor: pointer;
 }
 
+.drum-active {
+	background-color: orange;
+	width: 85px;
+	height: 75px;
+}
+
 .controls-container {
 	display: flex;
 	justify-content: center;
