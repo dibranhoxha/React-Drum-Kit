@@ -1,9 +1,10 @@
 import React from 'react';
-import ButtonsContainer from "./components/ButtonsContainer";
+import DrumPad from "./components/DrumPad";
 import Switch from './components/Switch';
 import Screen from './components/DisplayScreen';
 import VolumeSlider from './components/VolumeSlider';
 import './App.css';
+import { bankOne, bankTwo } from './data/drums-data'
 
 
 class App extends React.Component {
@@ -11,13 +12,12 @@ class App extends React.Component {
     return (
       <div id="drum-machine" className="app-container">
         <div className="box-container">
-          <ButtonsContainer />
+          <DrumPad bank={bankOne} />
         </div>
-        <div className="action-container">
+        <div className="controls-container">
           <Switch />
           <Screen />
           <VolumeSlider />
-          <Switch />
         </div>
       </div>
     );

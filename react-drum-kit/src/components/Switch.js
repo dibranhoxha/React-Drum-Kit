@@ -3,8 +3,11 @@ import React from 'react'
 export default class Switch extends React.Component {
     render() {
         return (
-            <div>
-
+            <div className="switch-container">
+                <b>Power</b>
+                <div className="switch-button-container">
+                    <div className="switch-button"></div>
+                </div>
             </div>
         )
     }
