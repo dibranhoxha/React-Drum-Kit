@@ -5,7 +5,7 @@ export default class Switch extends React.Component {
         return (
             <div className="switch-container">
                 <b>Power</b>
-                <div className="switch-button-container">
+                <div className="switch-button-container-off">
                     <div className="switch-button"></div>
                 </div>
             </div>

@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
 import Drum from './Drum';
 
-export default class BoxContainer extends Component {
+export default class DrumPad extends Component {
+
     render() {
         let bank = this.props.bank;
         return (
             <div className="buttons-container">
-                {bank.map(drum => <Drum key={bank.indexOf(drum)} letter={drum.keyTrigger} />)}
+                {
+                    bank.map(drum => {
+                        return (
+                            <Drum
+                                key={bank.indexOf(drum)}
+                                drum={drum}
+                                playSound={this.playSound}
+                            />
+                        )
+                    })
+                }
             </div>
         )
     }
