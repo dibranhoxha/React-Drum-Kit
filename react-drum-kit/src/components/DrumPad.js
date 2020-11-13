@@ -3,6 +3,7 @@ import Drum from './Drum';
 
 export default class DrumPad extends Component {
 
+
     render() {
         let bank = this.props.bank;
         return (
@@ -13,7 +14,7 @@ export default class DrumPad extends Component {
                             <Drum
                                 key={bank.indexOf(drum)}
                                 drum={drum}
-                                playSound={this.playSound}
+                                play={this.props.power}
                             />
                         )
                     })

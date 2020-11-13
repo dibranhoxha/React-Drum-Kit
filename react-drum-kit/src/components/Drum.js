@@ -17,15 +17,22 @@ export default class LetterBox extends Component {
     }
 
     playSound() {
+        let checkClass;
         const sound = document.getElementById(this.props.drum.keyTrigger);
-        sound.currentTime = 0;
-        sound.play();
-        sound.parentNode.classList.add('drum-active')
-        setTimeout(() => sound.parentNode.classList.remove('drum-active'), 100,);
+        if (this.props.play) {
+            sound.currentTime = 0;
+            sound.play();
+            checkClass = "drum-active";
+        }
+        else {
+            checkClass = "drum-not-active";
+        }
+        sound.parentNode.classList.add(checkClass);
+        setTimeout(() => sound.parentNode.classList.remove(checkClass), 100,);
+
     }
 
     handleKeyPress(e) {
-        e.preventDefault();
         if (e.keyCode === this.props.drum.keyCode) {
             this.playSound();
         }
@@ -33,7 +40,7 @@ export default class LetterBox extends Component {
     render() {
         let { keyTrigger, url } = this.props.drum;
         return (
-            <div className="drum-pad" onClick={this.playSound} >
+            <div className="drum-pad" onClick={this.props.play ? this.playSound : ''} >
                 <audio className="clip" id={keyTrigger} src={url}></audio>
                 <span>{keyTrigger}</span>
             </div>
